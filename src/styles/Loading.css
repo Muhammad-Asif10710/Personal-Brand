@@ -1,43 +1,104 @@
-/* Loading Screen Styles */
+/* =========================
+   Loader Container
+========================= */
 .loader-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #111827; /* A nice vibrant blue */
+  inset: 0;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
+/* =========================
+   Spinner Wrapper (pulse)
+========================= */
+.spinner-wrapper {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* =========================
+   Spinner Core (rotation)
+========================= */
 .spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(255, 255, 255, 0.3);
+  width: 56px;
+  height: 56px;
+  position: relative;
+}
+
+/* Rings */
+.spinner::before,
+.spinner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   border-radius: 50%;
-  border-top-color: #ffffff;
-  animation: spin 1s ease-in-out infinite;
+  border: 3px solid transparent;
+  animation: spin 2s cubic-bezier(0.6, 0, 0.4, 1) infinite;
 }
 
+/* Primary ring */
+.spinner::before {
+  border-top-color: #3b82f6;
+  border-right-color: #3b82f6;
+  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.5));
+}
+
+/* Secondary ring */
+.spinner::after {
+  border-bottom-color: #93c5fd;
+  border-left-color: #93c5fd;
+  animation-duration: 5s;
+  opacity: 0.6;
+}
+
+/* =========================
+   Animations
+========================= */
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
+@keyframes pulse {
+  0%   { opacity: 0.85; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.85; }
+}
+
+/* =========================
+   Loader Text
+========================= */
 .loader-text {
-  margin-top: 20px;
-  color: white;
-  font-family: sans-serif;
-  letter-spacing: 1px;
-  font-weight: 300;
+  margin-top: 24px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6b7280;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+/* =========================
+   Loader Dark Mode
+========================= */
+.dark .loader-container {
+  background: #111827;
 }
 
-/* Smooth fade-in for the website content */
-.fade-in {
-  background-color: #111827;
-  animation: fadeIn 0.8s ease-in forwards;
+.dark .loader-text {
+  color: #9ca3af;
 }
 
+.dark .spinner::before {
+  border-top-color: #10b981;
+  border-right-color: #10b981;
+  filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.6));
+}
+
+.dark .spinner::after {
+  border-bottom-color: #34d399;
+  border-left-color: #34d399;
+}
