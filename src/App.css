@@ -1,0 +1,92 @@
+/* Page Sections */
+section {
+  padding: 4rem 1rem;
+}
+
+section h2 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+
+section p {
+  color: #374151;
+}
+
+/* Projects Section */
+#projects {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+#projects.dark {
+  background-color: #111827;
+}
+
+#projects.dark h2 {
+  color: #ffffff;
+}
+
+#projects.dark p {
+  color: #d1d5db;
+}
+
+/* Tech Stack Section */
+#tech {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+#tech.dark {
+  background-color: #1f2937;
+}
+
+#tech.dark h2 {
+  color: #ffffff;
+}
+
+#tech.dark p {
+  color: #d1d5db;
+}
+
+/* Education Section */
+#education {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+#education.dark {
+  background-color: #111827;
+}
+
+#education.dark h2 {
+  color: #ffffff;
+}
+
+#education.dark p {
+  color: #d1d5db;
+}
+
+/* Experience Section */
+#experience {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+#experience.dark {
+  background-color: #1f2937;
+}
+
+#experience.dark h2 {
+  color: #ffffff;
+}
+
+#experience.dark p {
+  color: #d1d5db;
+}
+
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}

@@ -1,0 +1,229 @@
+/* Education Section */
+.education {
+  background-color: #f9fafb;
+  padding: 4rem 1rem;
+}
+
+.education.dark {
+  background-color: #1f2937;
+}
+
+.education-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 3rem;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #3b82f6;
+  text-underline-offset: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.section-title:hover {
+  color: #000000;
+  text-decoration-color: #1d4ed8;
+}
+
+.education.dark .section-title {
+  color: #ffffff;
+  text-decoration-color: #10b981;
+}
+
+.education.dark .section-title:hover {
+  text-decoration-color: #059669;
+  color: #ecfdf5;
+}
+
+/* Timeline */
+.education-timeline {
+  position: relative;
+  padding: 2rem 0;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.education-timeline::before {
+  display: none;
+}
+
+/* Timeline Item */
+.education-item {
+  margin-bottom: 0;
+  position: relative;
+  flex: 1 1 calc(33.333% - 1.67rem);
+  min-width: 250px;
+  max-width: 350px;
+  display: flex;
+}
+
+.education-item:nth-child(odd) .education-content {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.education-item:nth-child(even) .education-content {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  text-align: left;
+}
+
+/* Timeline Marker */
+.education-marker {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #4f46e5;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: none;
+}
+
+.education.dark .education-marker {
+  background-color: #10b981;
+  border-color: #1f2937;
+}
+
+/* Content Card */
+.education-content {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.education-content:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.education-content:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.education.dark .education-content {
+  background-color: #111827;
+  border-color: #10b981;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.education.dark .education-content:hover {
+  border-color: #34d399;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Content Typography */
+.education-content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.education.dark .education-content h3 {
+  color: #ffffff;
+}
+
+.institution,
+.project-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4f46e5;
+  margin-bottom: 0.5rem;
+}
+
+.education.dark .institution,
+.education.dark .project-name {
+  color: #10b981;
+}
+
+.year {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.education.dark .year {
+  color: #9ca3af;
+}
+
+.cgpa {
+  display: inline-block;
+  background-color: #ede9fe;
+  color: #4f46e5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.education.dark .cgpa {
+  background-color: #312e81;
+  color: #a78bfa;
+}
+
+.education-details {
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.education.dark .description {
+  color: #d1d5db;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .education-timeline {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .education-item {
+    flex: 0 1 100%;
+    margin-bottom: 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .education-content {
+    padding: 1.5rem;
+  }
+
+  .education-content h3 {
+    font-size: 1.25rem;
+  }
+}

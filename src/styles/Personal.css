@@ -1,0 +1,73 @@
+/* Personal Page */
+.personal-page {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.personal-page.dark {
+  background-color: #111827;
+}
+
+.personal-section {
+  min-height: 50vh;
+  padding: 4rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.personal-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.personal-section .section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #3b82f6;
+  text-underline-offset: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.personal-page.dark .section-title {
+  color: #ffffff;
+  text-decoration-color: #10b981;
+}
+
+.personal-content {
+  text-align: center;
+  color: #4b5563;
+  font-size: 1.1rem;
+}
+
+.personal-page.dark .personal-content {
+  color: #d1d5db;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .personal-section {
+    padding: 3rem 1rem;
+  }
+
+  .personal-section .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .personal-section {
+    padding: 2rem 1rem;
+  }
+
+  .personal-section .section-title {
+    font-size: 1.75rem;
+  }
+}
+
