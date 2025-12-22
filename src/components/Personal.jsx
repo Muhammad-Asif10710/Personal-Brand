@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../styles/Personal.css';
+import useTheme from './useTheme';
 
 export default function Personal() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const observer = new MutationObserver(() => {
-      setIsDark(document.documentElement.classList.contains('dark'));
-    });
-
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-    setIsDark(document.documentElement.classList.contains('dark'));
-
-    return () => observer.disconnect();
-  }, []);
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
 
   return (
     <div className={`personal-page ${isDark ? 'dark' : ''}`}>
@@ -46,4 +37,5 @@ export default function Personal() {
     </div>
   );
 }
+
 

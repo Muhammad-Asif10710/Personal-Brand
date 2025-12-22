@@ -1,11 +1,11 @@
 /* Education Section */
 .education {
-  background-color: #f9fafb;
+  background-color: #ffffff;
   padding: 4rem 1rem;
 }
 
 .education.dark {
-  background-color: #1f2937;
+  background-color: #111827;
 }
 
 .education-container {
@@ -14,7 +14,8 @@
   padding: 0 1rem;
 }
 
-.section-title {
+/* Section Title */
+.education .section-title {
   font-size: 2.5rem;
   font-weight: bold;
   color: #000000;
@@ -27,8 +28,7 @@
   cursor: pointer;
 }
 
-.section-title:hover {
-  color: #000000;
+.education .section-title:hover {
   text-decoration-color: #1d4ed8;
 }
 
@@ -42,86 +42,30 @@
   color: #ecfdf5;
 }
 
-/* Timeline */
-.education-timeline {
-  position: relative;
-  padding: 2rem 0;
-  display: flex;
-  gap: 3rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
+/* Education Grid */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
 }
 
-.education-timeline::before {
-  display: none;
-}
-
-/* Timeline Item */
-.education-item {
-  margin-bottom: 0;
-  position: relative;
-  flex: 1 1 calc(33.333% - 1.67rem);
-  min-width: 250px;
-  max-width: 350px;
-  display: flex;
-}
-
-.education-item:nth-child(odd) .education-content {
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%;
-  text-align: left;
-}
-
-.education-item:nth-child(even) .education-content {
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%;
-  text-align: left;
-}
-
-/* Timeline Marker */
-.education-marker {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  background-color: #4f46e5;
-  border: 4px solid #ffffff;
-  border-radius: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  display: none;
-}
-
-.education.dark .education-marker {
-  background-color: #10b981;
-  border-color: #1f2937;
-}
-
-/* Content Card */
+/* Education Card */
 .education-content {
   background-color: #ffffff;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 0.75rem;
   border: 2px solid #3b82f6;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .education-content:hover {
   border-color: #93c5fd;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.education-content:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   transform: translateY(-4px);
 }
 
@@ -133,12 +77,13 @@
 
 .education.dark .education-content:hover {
   border-color: #34d399;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  background-color: #1f2937;
 }
 
-/* Content Typography */
+/* Education Typography */
 .education-content h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   color: #111827;
   margin-bottom: 0.5rem;
@@ -150,9 +95,9 @@
 
 .institution,
 .project-name {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #4f46e5;
+  color: #3b82f6;
   margin-bottom: 0.5rem;
 }
 
@@ -164,8 +109,8 @@
 .year {
   font-size: 0.9rem;
   color: #6b7280;
-  margin-bottom: 1rem;
   font-style: italic;
+  margin-bottom: 0.75rem;
 }
 
 .education.dark .year {
@@ -188,13 +133,9 @@
   color: #a78bfa;
 }
 
-.education-details {
-  margin-bottom: 1rem;
-}
-
 .description {
   font-size: 0.95rem;
-  color: #4b5563;
+  color: #6b7280;
   line-height: 1.6;
 }
 
@@ -204,26 +145,36 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .education-timeline {
-    flex-direction: column;
+  .education-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
   }
 
-  .education-item {
-    flex: 0 1 100%;
-    margin-bottom: 0;
-  }
-
-  .section-title {
+  .education .section-title {
     font-size: 2rem;
-    margin-bottom: 2rem;
   }
 
   .education-content {
     padding: 1.5rem;
   }
+}
 
-  .education-content h3 {
-    font-size: 1.25rem;
+@media (max-width: 480px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .education {
+    padding: 2rem 1rem;
+  }
+
+  .education .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .education-content {
+    padding: 1.25rem;
   }
 }

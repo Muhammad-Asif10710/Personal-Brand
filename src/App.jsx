@@ -8,12 +8,10 @@ import Education from './components/Education'
 import TechStack from './components/TechStack'
 import Experience from './components/Experience'
 import Personal from './components/Personal'
-import useTheme from './components/useTheme'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('main');
   const [isLoading, setIsLoading] = useState(true);
-  useTheme();
 
   useEffect(() => {
     // This waits for all images, scripts, and links to finish loading

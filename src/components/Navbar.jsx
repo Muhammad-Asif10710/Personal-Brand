@@ -11,7 +11,7 @@ export default function Navbar({ onNavigateToPersonal }) {
 
   const links = [
     { id: 'projects', label: 'Projects' },
-    { id: 'tech-stack', label: 'Tech stack' },
+    { id: 'tech-stack', label: 'Stack' },
     { id: 'education', label: 'Education' },
     { id: 'experience', label: 'Experience' },
   ];
@@ -115,8 +115,8 @@ export default function Navbar({ onNavigateToPersonal }) {
       <div className="navbar-container">
         <div className="navbar-content">
           <div className="navbar-logo">
-            <a 
-              href="#" 
+            <a
+              href="#"
               className={theme === 'dark' ? 'dark' : ''}
               onClick={(e) => {
                 e.preventDefault();
@@ -126,6 +126,20 @@ export default function Navbar({ onNavigateToPersonal }) {
               }}
             >
               Muhammad Asif
+            </a>
+          </div>
+          <div className="navbar-mobile-nav">
+            <a
+              href="#"
+              className={`${theme === 'dark' ? 'dark' : ''} personal-link`}
+              onClick={(e) => {
+                e.preventDefault();
+                if (onNavigateToPersonal) {
+                  onNavigateToPersonal();
+                }
+              }}
+            >
+              Personal
             </a>
           </div>
 

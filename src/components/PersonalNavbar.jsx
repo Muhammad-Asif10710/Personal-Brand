@@ -26,8 +26,8 @@ export default function PersonalNavbar({ onBackToMain }) {
       <div className="navbar-container">
         <div className="navbar-content">
           <div className="navbar-logo">
-            <a 
-              href="#" 
+            <a
+              href="#"
               className={theme === 'dark' ? 'dark' : ''}
               onClick={(e) => {
                 e.preventDefault();
@@ -35,6 +35,18 @@ export default function PersonalNavbar({ onBackToMain }) {
               }}
             >
               Muhammad Asif
+            </a>
+          </div>
+          <div className="navbar-mobile-nav">
+            <a
+              href="#"
+              className={`${theme === 'dark' ? 'dark' : ''} professional-link`}
+              onClick={(e) => {
+                e.preventDefault();
+                onBackToMain();
+              }}
+            >
+              Professional
             </a>
           </div>
 
