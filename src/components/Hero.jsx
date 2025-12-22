@@ -28,9 +28,9 @@ export default function Hero() {
     <section key={theme} className={`hero ${isDark ? 'dark' : ''}`}>
       <div className="hero-container">
         <div className="hero-image">
-          <img 
-            src={asifImage} 
-            alt="Muhammad Asif" 
+          <img
+            src={asifImage}
+            alt=" Asif"
             className={`hero-img-base ${showShirtless ? 'fade-out' : 'fade-in'}`}
             loading="eager"
           />

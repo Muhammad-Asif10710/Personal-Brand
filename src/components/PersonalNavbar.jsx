@@ -34,7 +34,7 @@ export default function PersonalNavbar({ onBackToMain }) {
                 onBackToMain();
               }}
             >
-              Muhammad Asif
+              Asif
             </a>
           </div>
           <div className="navbar-mobile-nav">

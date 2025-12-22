@@ -125,7 +125,7 @@ export default function Navbar({ onNavigateToPersonal }) {
                 lastClickedRef.current = '';
               }}
             >
-              Muhammad Asif
+              Asif
             </a>
           </div>
           <div className="navbar-mobile-nav">
