@@ -10,8 +10,33 @@ import frame5 from '../assets/images/5.png';
 export default function Personal() {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
-  const [currentFrame, setCurrentFrame] = useState(frame1);
+  const [currentFrameIndex, setCurrentFrameIndex] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   const frames = [frame1, frame2, frame3, frame4, frame5, frame4, frame3, frame2, frame1];
+
+  // Preload all images
+  useEffect(() => {
+    const preloadImages = async () => {
+      const promises = frames.map((frame) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = frame;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      });
+
+      try {
+        await Promise.all(promises);
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error('Failed to preload images:', error);
+        setImagesLoaded(true); // Still set to true to show the animation
+      }
+    };
+
+    preloadImages();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,17 +45,19 @@ export default function Personal() {
       const scrollPercent = scrollTop / docHeight;
       const totalFrames = frames.length - 1;
       const frameIndex = Math.round(scrollPercent * totalFrames);
-      setCurrentFrame(frames[frameIndex]);
+      setCurrentFrameIndex(frameIndex);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [frames]);
+  }, []);
 
   return (
     <div className={`personal-page ${isDark ? 'dark' : ''}`}>
       <div className="scroll-animation">
-        <img src={currentFrame} alt="Scroll Animation" className="scroll-frame" />
+        {imagesLoaded && (
+          <img src={frames[currentFrameIndex]} alt="Scroll Animation" className="scroll-frame" />
+        )}
       </div>
       <section id="travel" className="personal-section">
         <div className="personal-container">
