@@ -270,7 +270,176 @@
 }
 
 .hero.dark .flirty:hover {
-  text-shadow: 
+  text-shadow:
     0 0 10px rgba(16, 185, 129, 0.9),
     0 0 20px rgba(52, 211, 153, 0.7);
+}
+
+/* Contact Popup */
+.contact-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.contact-popup-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.hero.dark .contact-popup-card {
+  background-color: #111827;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.contact-popup-card h3 {
+  color: #111827;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.hero.dark .contact-popup-card h3 {
+  color: #ffffff;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: #374151;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.hero.dark .form-group label {
+  color: #d1d5db;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.hero.dark .form-group input,
+.hero.dark .form-group textarea {
+  background-color: #1f2937;
+  border-color: #4b5563;
+  color: #ffffff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.hero.dark .form-group input:focus,
+.hero.dark .form-group textarea:focus {
+  border-color: #10b981;
+}
+
+.popup-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.btn-mail,
+.btn-cancel {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-mail {
+  background-color: #4f46e5;
+  color: #ffffff;
+}
+
+.btn-mail:hover {
+  background-color: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+}
+
+.hero.dark .btn-mail {
+  background-color: #10b981;
+}
+
+.hero.dark .btn-mail:hover {
+  background-color: #059669;
+  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-cancel {
+  background-color: #6b7280;
+  color: #ffffff;
+}
+
+.btn-cancel:hover {
+  background-color: #4b5563;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(107, 114, 128, 0.3);
+}
+
+.hero.dark .btn-cancel {
+  background-color: #374151;
+}
+
+.hero.dark .btn-cancel:hover {
+  background-color: #1f2937;
+  box-shadow: 0 5px 15px rgba(55, 65, 81, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-popup-card {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .contact-popup-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .popup-buttons {
+    flex-direction: column;
+  }
+
+  .btn-mail,
+  .btn-cancel {
+    width: 100%;
+  }
 }
