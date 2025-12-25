@@ -8,6 +8,7 @@ import Education from './components/Education'
 import TechStack from './components/TechStack'
 import Experience from './components/Experience'
 import Personal from './components/Personal'
+import asifImage from './assets/images/asif.png'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('main');

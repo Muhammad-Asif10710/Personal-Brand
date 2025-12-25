@@ -70,9 +70,9 @@ export default function Personal() {
               </p>
             </div>
             <div className="travel-card">
-              <h3>Qalam</h3>
+              <h3>Kalam</h3>
               <p className="travel-description">
-                Another gem in the Swat valley, Qalam offered stunning landscapes and a peaceful retreat amidst nature's beauty.
+                Another gem in the Swat valley, Kalam offered stunning landscapes and a peaceful retreat amidst nature's beauty.
               </p>
             </div>
           </div>
