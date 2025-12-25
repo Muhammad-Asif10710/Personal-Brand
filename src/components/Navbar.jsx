@@ -8,12 +8,13 @@ export default function Navbar({ onNavigateToPersonal }) {
   const { theme, toggleTheme } = useTheme();
   const lastClickedRef = useRef('');
   const isScrollingRef = useRef(false);
+  const hasNavigatedToPersonalRef = useRef(false);
 
   const links = [
-    { id: 'projects', label: 'Projects' },
-    { id: 'tech-stack', label: 'Stack' },
     { id: 'education', label: 'Education' },
+    { id: 'tech-stack', label: 'Stack' },
     { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
   ];
 
   const scrollToSection = (sectionId) => {
@@ -100,6 +101,18 @@ export default function Navbar({ onNavigateToPersonal }) {
       if (window.scrollY < 100) {
         setActiveLink('');
         lastClickedRef.current = '';
+      }
+
+      // Check if scrolled past projects section to navigate to personal
+      const projectsElement = document.getElementById('projects');
+      if (projectsElement && !hasNavigatedToPersonalRef.current) {
+        const projectsBottom = projectsElement.offsetTop + projectsElement.offsetHeight;
+        if (window.scrollY + window.innerHeight > projectsBottom + 100) { // 100px buffer
+          hasNavigatedToPersonalRef.current = true;
+          if (onNavigateToPersonal) {
+            onNavigateToPersonal();
+          }
+        }
       }
     };
 

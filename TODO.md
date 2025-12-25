@@ -1,7 +1,7 @@
-# TODO: Fix Homepage Loading to Wait for Hero Image
+# TODO: Implement Scroll-Triggered Personal Section After Projects
 
-- [x] Import asifImage in App.jsx
-- [x] Modify useEffect in App.jsx to preload hero image and set isLoading to false on image load
-- [x] Keep 800ms timeout as fallback
-- [x] Remove window load event listener
-- [x] Test the homepage loading
+- [x] Modify App.jsx to include Personal component in the main page layout after Projects
+- [x] Add useState for controlling Personal section visibility
+- [x] Add useEffect with IntersectionObserver to detect when Projects section is scrolled past
+- [x] Conditionally render Personal component based on scroll position
+- [ ] Test the scroll behavior to ensure Personal section appears smoothly after Projects
