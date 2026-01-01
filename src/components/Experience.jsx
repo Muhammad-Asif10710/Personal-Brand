@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Experience.css';
+import experienceImage from '../assets/images/experience.png';
 
 export default function Experience() {
   const [isDark, setIsDark] = useState(false);
@@ -42,7 +43,10 @@ export default function Experience() {
   return (
     <section id="experience" className={`experience ${isDark ? 'dark' : ''}`}>
       <div className="experience-container">
-        <h2 className="section-title">Experience</h2>
+        <div className="section-title-container">
+          <h2 className="section-title">Experience</h2>
+          <img src={experienceImage} alt="Experience" className="section-title-image" />
+        </div>
         
         <div className="experience-grid">
           {experiences.map((exp, index) => (

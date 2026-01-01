@@ -52,7 +52,7 @@ function App() {
   // 2. Personal Page State
   if (currentPage === 'personal') {
     return (
-      <div className="fade-in">
+      <div >
         <PersonalNavbar onBackToMain={handleBackToMain} />
         <Personal />
       </div>
@@ -61,7 +61,7 @@ function App() {
 
   // 3. Main Page State
   return (
-    <div className="fade-in">
+    <div >
       <Navbar onNavigateToPersonal={handleNavigateToPersonal} />
       <Hero />
       <Education />

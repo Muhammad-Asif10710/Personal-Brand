@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import useTheme from './useTheme.js';
 import '../styles/TechStack.css';
+import techStackImage from '../assets/images/tech stack.png';
 
 const TechStack = () => {
   const [isDark, setIsDark] = useState(false);
@@ -72,7 +73,10 @@ const TechStack = () => {
   return (
     <section id="tech-stack" className={`tech-stack ${isDark ? 'dark' : ''}`}>
       <div className="tech-stack-container">
-        <h2 className="section-title">Tech Stack</h2>
+        <div className="section-title-container">
+          <img src={techStackImage} alt="Tech Stack" className="section-title-image" />
+          <h2 className="section-title">Tech Stack</h2>
+        </div>
         <div className="tech-grid">
           {techStacks.map((tech, index) => (
             <div key={index} className="tech-card">

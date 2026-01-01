@@ -5,6 +5,7 @@ import '../styles/Hero.css';
 import asifImage from '../assets/images/asif.png';
 import asif1Image from '../assets/images/asif1.png';
 import resumePDF from '../assets/RESUME PDF-1.pdf';
+import emailjs from '@emailjs/browser';
 
 export default function Hero() {
   const { theme } = useTheme();
@@ -12,6 +13,7 @@ export default function Hero() {
   const [showShirtless, setShowShirtless] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [showContactPopup, setShowContactPopup] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [contactForm, setContactForm] = useState({
     name: '',
     email: '',
@@ -50,11 +52,42 @@ export default function Hero() {
     setContactForm({ name: '', email: '', message: '' });
   };
 
+  const handleCloseSuccessPopup = () => {
+    setShowSuccessPopup(false);
+  };
+
   const handleFormChange = (e) => {
     setContactForm({
       ...contactForm,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    const jsonPayload = JSON.stringify(contactForm, null, 2);
+
+    const templateParams = {
+      to_email: 'npam10710@gmail.com',
+      from_name: contactForm.name,
+      from_email: contactForm.email,
+      message: jsonPayload,
+    };
+
+    console.log('Service ID:', import.meta.env.VITE_EMAILJS_SERVICE_ID);
+    console.log('Template ID:', import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+    console.log('Public Key:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
+    emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+      .then((result) => {
+        console.log('Email sent successfully!', result.text);
+        handleClosePopup();
+        setShowSuccessPopup(true);
+      }, (error) => {
+        console.error('Failed to send email:', error.text);
+        alert('Failed to send email. Please try again.');
+      });
   };
 
 
@@ -101,7 +134,7 @@ export default function Hero() {
         <div className="contact-popup-overlay" onClick={handleClosePopup}>
           <div className="contact-popup-card" onClick={(e) => e.stopPropagation()}>
             <h3>Get in Touch</h3>
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={handleFormSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input
@@ -136,23 +169,27 @@ export default function Hero() {
                 />
               </div>
               <div className="popup-buttons">
-                <a
-                  href="mailto:npam10710@gmail.com?subject=Contact from Portfolio&body=Hello, I would like to get in touch."
-                  className="btn-mail"
-                  onClick={(e) => {
-                    // Close popup after mailto link is triggered
-                    setTimeout(() => {
-                      handleClosePopup();
-                    }, 100);
-                  }}
-                >
+                <button type="submit" className="btn-mail">
                   Send Mail
-                </a>
+                </button>
                 <button type="button" className="btn-cancel" onClick={handleClosePopup}>
                   Cancel
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Success Popup */}
+      {showSuccessPopup && (
+        <div className="contact-popup-overlay" onClick={handleCloseSuccessPopup}>
+          <div className="contact-popup-card success-popup" onClick={(e) => e.stopPropagation()}>
+            <h3>Email Sent Successfully!</h3>
+            <p>Thank you for reaching out. I'll get back to you soon.</p>
+            <div className="popup-buttons">
+              <button className="btn btn-primary" onClick={handleCloseSuccessPopup}>OK</button>
+            </div>
           </div>
         </div>
       )}

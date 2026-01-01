@@ -423,6 +423,16 @@
   box-shadow: 0 5px 15px rgba(55, 65, 81, 0.3);
 }
 
+/* Success Popup */
+.success-popup p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.hero.dark .success-popup p {
+  color: #ffffff;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .contact-popup-card {

@@ -14,22 +14,32 @@
   padding: 0 1rem;
 }
 
+.section-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.section-title-image {
+  height: 10rem;
+  width: auto;
+  margin-right: 1rem;
+}
+
 .tech-stack .section-title {
   font-size: 2.5rem;
   font-weight: bold;
   color: #000000;
-  margin-bottom: 3rem;
-  text-align: center;
-  text-decoration: underline;
-  text-decoration-color: #3b82f6;
-  text-underline-offset: 0.5rem;
   transition: all 0.3s ease;
   cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #1d4ed8;
+  margin-bottom: 0;
 }
 
 .tech-stack .section-title:hover {
   color: #000000;
-  text-decoration-color: #1d4ed8;
 }
 
 .tech-stack.dark .section-title {
@@ -38,7 +48,6 @@
 }
 
 .tech-stack.dark .section-title:hover {
-  text-decoration-color: #059669;
   color: #ecfdf5;
 }
 

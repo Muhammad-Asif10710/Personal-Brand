@@ -1,7 +1,4 @@
-# TODO: Implement Scroll-Triggered Personal Section After Projects
+# TODO for Education Section Updates
 
-- [x] Modify App.jsx to include Personal component in the main page layout after Projects
-- [x] Add useState for controlling Personal section visibility
-- [x] Add useEffect with IntersectionObserver to detect when Projects section is scrolled past
-- [x] Conditionally render Personal component based on scroll position
-- [ ] Test the scroll behavior to ensure Personal section appears smoothly after Projects
+- [ ] Center the "Education" text in the section heading by changing justify-content to center in .section-title
+- [ ] Increase the picture size to 4x by changing height from 2.5rem to 10rem in .section-image

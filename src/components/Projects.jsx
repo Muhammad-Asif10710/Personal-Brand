@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Projects.css';
+import projectImage from '../assets/images/projects.png';
 
 export default function Projects() {
   const [isDark, setIsDark] = useState(false);
@@ -56,7 +57,10 @@ export default function Projects() {
   return (
     <section id="projects" className={`projects ${isDark ? 'dark' : ''}`}>
       <div className="projects-container">
-        <h2 className="section-title">Projects</h2>
+        <div className="section-title-container">
+          <img src={projectImage} alt="Projects" className="section-title-image" />
+          <h2 className="section-title">Projects</h2>
+        </div>
         
         <div className="projects-grid">
           {projects.map((project, index) => (

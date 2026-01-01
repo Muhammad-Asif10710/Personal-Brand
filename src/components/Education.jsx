@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Education.css';
+import studyImage from '../assets/images/study.png';
 
 export default function Education() {
   const [isDark, setIsDark] = useState(false);
@@ -18,7 +19,10 @@ export default function Education() {
   return (
     <section id="education" className={`education ${isDark ? 'dark' : ''}`}>
       <div className="education-container">
-        <h2 className="section-title">Education</h2>
+        <div className="section-title-container">
+          <h2 className="section-title">Education</h2>
+          <img src={studyImage} alt="Study" className="section-title-image" />
+        </div>
 
         <div className="education-grid">
           {/* Education Card 1 */}
