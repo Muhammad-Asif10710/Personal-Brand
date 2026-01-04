@@ -139,10 +139,16 @@ export default function Hero() {
         <div className="hero-content">
           <h1 className="flirty">Hey! I'm Asif.</h1>
           <p className="hero-subtitle">A Full Stack Developer & AI/ML Engineer </p>
-          <p className="hero-description"> I create intelligent 
-            solutions that solve real-world problems. 
-         
-            4 years of experience in Full Web Development. Proefficient in AI/ML solutions.<br/> Backend: Laravel & Nest Js<br/> Frontend: React & Next js<br/> AI/ML: Fine-tuning, n8n, RAG, Langchain & MCP 
+          <p className="hero-description">
+            I create intelligent solutions that solve real-world problems.
+            <br />
+            4 years of experience in Full Web Development. Proficient in AI/ML solutions.
+            <br />
+            Backend: Laravel & Nest Js
+            <br />
+            Frontend: React & Next js
+            <br />
+            AI/ML: Fine-tuning, n8n, RAG, Langchain & MCP
           </p>
           <div className="hero-cta">
             <button className="btn btn-primary" onClick={handleDownloadCV}>Download Resume</button>
