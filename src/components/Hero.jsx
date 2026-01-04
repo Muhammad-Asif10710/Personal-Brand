@@ -142,7 +142,7 @@ export default function Hero() {
           <p className="hero-description">
             I create intelligent solutions that solve real-world problems.
             <br />
-            4 years of experience in Full Web Development. Proficient in AI/ML solutions.
+            4 years of experience in Full Stack Web Development. Proficient in AI/ML solutions.
             <br />
             Backend: Laravel & Nest Js
             <br />
