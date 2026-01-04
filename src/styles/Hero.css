@@ -2,7 +2,7 @@
 .hero {
   min-height: 50vh;
   background-color: #ffffff;
-  padding: 4rem 1rem;
+  padding: 1rem 1rem;
   display: flex;
   align-items: center;
 }
@@ -17,17 +17,89 @@
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 /* Hero Image */
 .hero-image {
   flex: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   position: relative;
   min-height: 320px;
+  gap: 1rem;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+}
+
+/* Hero Socials */
+.hero-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-link {
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+.social-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #4f46e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.hero.dark .social-circle {
+  background-color: #10b981;
+}
+
+.social-circle:hover {
+  background-color: #4338ca;
+}
+
+.hero.dark .social-circle:hover {
+  background-color: #059669;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+}
+
+/* Hero Phone */
+.hero-phone {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.hero-phone p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0.25rem 0;
+}
+
+.hero.dark .hero-phone p {
+  color: #ffffff;
 }
 
 .hero-image img {
