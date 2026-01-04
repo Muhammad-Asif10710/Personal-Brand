@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import './App.css'
 import './styles/Loading.css' // Import your new CSS
 import Navbar from './components/Navbar'
 import PersonalNavbar from './components/PersonalNavbar'
@@ -8,11 +9,13 @@ import Education from './components/Education'
 import TechStack from './components/TechStack'
 import Experience from './components/Experience'
 import Personal from './components/Personal'
+import useTheme from './components/useTheme'
 import asifImage from './assets/images/asif.png'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('main');
   const [isLoading, setIsLoading] = useState(true);
+  const { theme } = useTheme();
 
   useEffect(() => {
     // This waits for all images, scripts, and links to finish loading
@@ -54,20 +57,23 @@ function App() {
     return (
       <div >
         <PersonalNavbar onBackToMain={handleBackToMain} />
-        <Personal />
+        <Personal onBackToMain={handleBackToMain} />
       </div>
     );
   }
 
   // 3. Main Page State
   return (
-    <div >
+    <div className={theme === 'dark' ? 'dark' : ''}>
       <Navbar onNavigateToPersonal={handleNavigateToPersonal} />
       <Hero />
       <Education />
       <TechStack />
       <Experience />
       <Projects />
+      <div className="pagination">
+        <button onClick={handleNavigateToPersonal} className="pagination-button">Next: Personal Page →</button>
+      </div>
     </div>
   );
 }

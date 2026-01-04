@@ -7,7 +7,7 @@ import frame3 from '../assets/images/3.png';
 import frame4 from '../assets/images/4.png';
 import frame5 from '../assets/images/5.png';
 
-export default function Personal() {
+export default function Personal({ onBackToMain }) {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
   const [currentFrameIndex, setCurrentFrameIndex] = useState(0);
@@ -100,7 +100,7 @@ export default function Personal() {
             <div className="book-card">
               <h3>Zen:Zest, Zip, Zap and Yen by Osho</h3>
               <p className="book-description">
-                Zen, Zest, Zip, Zap and Zen - by Osho is a playful yet piercing invitation to awaken through laughter, paradox, and spontaneity. Osho blends Zen stories, jokes, and sharp observations to dismantle seriousness around spirituality. The book argues that truth is not found through discipline or suffering, but through awareness infused with joy and liveliness. “Zest” and “zip” symbolize living fully in the present, while “zap” represents sudden insight that shatters conditioning. Osho challenges the ego, religious rigidity, and borrowed beliefs, urging readers to experience life directly. The text feels chaotic at times, but intentionally so—mirroring Zen’s method of jolting the mind into clarity.
+                Zen, Zest, Zip, Zap and Zen - by Osho is a playful yet piercing invitation to awaken through laughter, paradox, and spontaneity. Osho blends Zen stories, jokes, and sharp observations to dismantle seriousness around spirituality. The book argues that truth is not found through discipline or suffering, but through awareness infused with joy and liveliness. “Zest” and “zip” symbolize living fully in the present, while “zap” represents sudden insight that shatters conditioning. Osho challenges the ego, religious rigidity, and borrowed beliefs, urging readers to experience life directly. The text feels chaotic at times, but intentionally so mirroring Zen’s method of jolting the mind into clarity.
 
               </p>
             </div>
@@ -116,6 +116,10 @@ export default function Personal() {
           </div>
         </div>
       </section>
+
+      <div className="pagination">
+        <button onClick={onBackToMain} className="pagination-button">← Back to Professional</button>
+      </div>
     </div>
   );
 }

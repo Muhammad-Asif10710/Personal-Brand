@@ -103,17 +103,7 @@ export default function Navbar({ onNavigateToPersonal }) {
         lastClickedRef.current = '';
       }
 
-      // Check if scrolled past projects section to navigate to personal
-      const projectsElement = document.getElementById('projects');
-      if (projectsElement && !hasNavigatedToPersonalRef.current) {
-        const projectsBottom = projectsElement.offsetTop + projectsElement.offsetHeight;
-        if (window.scrollY + window.innerHeight > projectsBottom + 100) { // 100px buffer
-          hasNavigatedToPersonalRef.current = true;
-          if (onNavigateToPersonal) {
-            onNavigateToPersonal();
-          }
-        }
-      }
+
     };
 
     // Initial check
