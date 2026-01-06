@@ -26,7 +26,7 @@ export default function Experience() {
     },
     {
       title: 'AI/ML Engineer - Vital Analytics',
-      period: 'March 2025 - Present',
+      period: 'March 2025 - Jan 2026',
       company: 'Remote US Company',
       description: 'Working as an AI/ML Engineer where I fine-tuned AI models and used n8n, Langchain, and RAG to build custom AI solutions. Currently continuing in this role.',
       icon: '🤖'
