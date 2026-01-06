@@ -126,7 +126,8 @@ export default function Personal({ onBackToMain }) {
               </div>
             )}
             <iframe
-              src={isDark ? "https://cal.com/muhammad-asif-tjb5z1/30min?theme=dark" : "https://cal.com/muhammad-asif-tjb5z1/30min"}
+              key={theme}
+              src={isDark ? "https://cal.com/muhammad-asif-tjb5z1/30min?theme=dark" : "https://cal.com/muhammad-asif-tjb5z1/30min?theme=light"}
               width="100%"
               height="600"
               frameBorder="0"
