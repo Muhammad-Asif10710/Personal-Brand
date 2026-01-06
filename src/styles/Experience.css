@@ -1,7 +1,7 @@
 /* Experience Section */
 .experience {
   background-color: #f9fafb;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .experience.dark {
@@ -82,7 +82,7 @@
 /* Experience Card */
 .experience-card {
   background-color: #ffffff;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 0.75rem;
   border: 2px solid #3b82f6;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -195,7 +195,7 @@
   }
 
   .experience-card {
-    padding: 1.5rem;
+    padding: 0.75rem;
   }
 
   .experience-icon {

@@ -1,7 +1,7 @@
 /* Tech Stack Section */
 .tech-stack {
   background-color: #f9fafb;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .tech-stack.dark {
@@ -81,7 +81,7 @@
 /* Tech Card */
 .tech-card {
   background-color: #ffffff;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 0.75rem;
   border: 2px solid #3b82f6;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -207,7 +207,7 @@
   }
 
   .tech-card {
-    padding: 1.25rem;
+    padding: 0.5rem;
   }
 
   .tech-icon {

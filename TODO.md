@@ -1,9 +1,8 @@
-# TODO: Update Hero Section with Social Icons, Phone Number, and Favicon
+# TODO: Reduce Space Between Sections in Personal.jsx
 
-## Steps to Complete:
-- [ ] Update `index.html` to change favicon from `/vite.svg` to `/asif.png`
-- [ ] Modify `src/components/Hero.jsx` to add social media icons (LinkedIn, GitHub, Instagram) below the hero image
-- [ ] Add phone number `03174730386` below the social icons in `src/components/Hero.jsx`
-- [ ] Update `src/styles/Hero.css` to style the new social icons and phone number elements
-- [ ] Ensure dark mode compatibility for new elements
-- [ ] Test responsiveness of new elements
+## Tasks
+- [x] Edit `src/styles/Personal.css` to reduce vertical padding in `.personal-section` from 4rem to 0.25rem
+- [x] Adjust responsive padding in media queries: 768px to 0.25rem, 480px to 0.25rem
+- [x] Reduce padding inside travel and book cards from 2rem to 1rem
+- [x] Verify changes by running the application and checking spacing
+np

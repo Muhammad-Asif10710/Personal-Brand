@@ -44,6 +44,7 @@ export default function Education() {
           <div className="education-content">
             <h3>Team Lead - Final Year Project</h3>
             <p className="project-name">E-Dossier: Laravel & React Management System</p>
+             <p className="institution">NUST - National University of Sciences and Technology</p>
             <p className="description">
               Led a team to develop a comprehensive management system using Laravel backend and React frontend. 
               The system streamlined document management and organizational workflows with modern web technologies. 
@@ -56,6 +57,7 @@ export default function Education() {
             <h3>Masters in Artificial Intelligence</h3>
             <p className="institution">Bahria University</p>
             <p className="year">Currently Pursuing</p>
+             <p className="year">Will Graduate in 2027</p>
             <p className="description">
               Advanced studies in machine learning, deep learning, natural language processing, and AI applications. 
               Developing expertise in cutting-edge AI technologies and their practical implementations.
