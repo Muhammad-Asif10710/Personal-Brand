@@ -9,6 +9,7 @@ import Education from './components/Education'
 import TechStack from './components/TechStack'
 import Experience from './components/Experience'
 import Personal from './components/Personal'
+import BookAppointment from './components/BookAppointment'
 import useTheme from './components/useTheme'
 import asifImage from './assets/images/asif.png'
 
@@ -71,6 +72,7 @@ function App() {
       <TechStack />
       <Experience />
       <Projects />
+      <BookAppointment />
       <div className="pagination">
         <button onClick={handleNavigateToPersonal} className="pagination-button">Next: Personal Page →</button>
       </div>

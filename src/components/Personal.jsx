@@ -12,6 +12,7 @@ export default function Personal({ onBackToMain }) {
   const isDark = theme === 'dark';
   const [currentFrameIndex, setCurrentFrameIndex] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [appointmentLoaded, setAppointmentLoaded] = useState(false);
   const frames = [frame1, frame2, frame3, frame4, frame5, frame4, frame3, frame2, frame1];
 
   // Preload all images
@@ -51,6 +52,10 @@ export default function Personal({ onBackToMain }) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    setAppointmentLoaded(false);
+  }, [theme]);
 
   return (
     <div className={`personal-page ${isDark ? 'dark' : ''}`}>
@@ -108,11 +113,27 @@ export default function Personal({ onBackToMain }) {
         </div>
       </section>
 
-      <section id="gym" className="personal-section">
+      <section id="book-appointment" className="personal-section">
         <div className="personal-container">
-          <h2 className="section-title">Gym</h2>
-          <div className="personal-content">
-            <p>Gym content coming soon...</p>
+          <h2 className="section-title">Book an Appointment</h2>
+          <div className="appointment-calendar">
+            {!appointmentLoaded && (
+              <div className={`appointment-spinner-container ${isDark ? 'dark' : ''}`}>
+                <div className="spinner-wrapper">
+                  <div className="spinner"></div>
+                </div>
+                <div className="loader-text">Loading Appointment...</div>
+              </div>
+            )}
+            <iframe
+              src={isDark ? "https://cal.com/muhammad-asif-tjb5z1/30min?theme=dark" : "https://cal.com/muhammad-asif-tjb5z1/30min"}
+              width="100%"
+              height="600"
+              frameBorder="0"
+              title="Book an Appointment"
+              onLoad={() => setAppointmentLoaded(true)}
+              style={{ display: appointmentLoaded ? 'block' : 'none' }}
+            ></iframe>
           </div>
         </div>
       </section>

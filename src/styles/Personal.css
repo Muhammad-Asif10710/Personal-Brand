@@ -85,6 +85,18 @@
   background: linear-gradient(135deg, #10b981, #34d399);
 }
 
+.dark .section-title {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.dark .section-title::after {
+  background: linear-gradient(135deg, #10b981, #34d399);
+}
+
 .personal-content {
   text-align: center;
   color: #4b5563;
@@ -278,6 +290,102 @@
 
 .personal-page.dark .pagination-button:hover {
   background: linear-gradient(135deg, #059669, #10b981);
+}
+
+/* Appointment Spinner */
+.appointment-spinner-container {
+  position: relative;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px; /* Match iframe height */
+  border-radius: 0.75rem;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-spinner-container.dark {
+  background: #111827;
+  border-color: #10b981;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Spinner Wrapper (pulse) */
+.appointment-spinner-container .spinner-wrapper {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* Spinner Core (rotation) */
+.appointment-spinner-container .spinner {
+  width: 56px;
+  height: 56px;
+  position: relative;
+}
+
+/* Rings */
+.appointment-spinner-container .spinner::before,
+.appointment-spinner-container .spinner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  animation: spin 2s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+}
+
+/* Primary ring */
+.appointment-spinner-container .spinner::before {
+  border-top-color: #3b82f6;
+  border-right-color: #3b82f6;
+  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.5));
+}
+
+/* Secondary ring */
+.appointment-spinner-container .spinner::after {
+  border-bottom-color: #93c5fd;
+  border-left-color: #93c5fd;
+  animation-duration: 5s;
+  opacity: 0.6;
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%   { opacity: 0.85; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.85; }
+}
+
+/* Loader Text */
+.appointment-spinner-container .loader-text {
+  margin-top: 24px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6b7280;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.appointment-spinner-container.dark .loader-text {
+  color: #9ca3af;
+}
+
+.appointment-spinner-container.dark .spinner::before {
+  border-top-color: #10b981;
+  border-right-color: #10b981;
+  filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.6));
+}
+
+.appointment-spinner-container.dark .spinner::after {
+  border-bottom-color: #34d399;
+  border-left-color: #34d399;
 }
 
 
