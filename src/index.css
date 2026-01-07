@@ -18,6 +18,63 @@ body {
   z-index: 1000;
 }
 
+.chat-tooltip {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  animation: fadeInOut 10s ease-in-out infinite;
+}
+
+.chat-tooltip.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.chat-tooltip.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.chat-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  border: 6px solid transparent;
+  border-top-color: #4f46e5;
+  transform: translateX(-50%);
+}
+
+.dark .chat-tooltip {
+  background: linear-gradient(135deg, #10b981, #34d399);
+}
+
+.dark .chat-tooltip::after {
+  border-top-color: #10b981;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chat-tooltip {
+    font-size: 12px;
+    padding: 6px 10px;
+    bottom: 65px;
+  }
+
+  .chat-tooltip::after {
+    right: 15px;
+  }
+}
+
 .chat-button {
   background: linear-gradient(135deg, #4f46e5, #7c3aed);
   color: white;
@@ -170,6 +227,12 @@ body {
 .thinking-dots span:nth-child(1) { animation-delay: 0s; }
 .thinking-dots span:nth-child(2) { animation-delay: 0.3s; }
 .thinking-dots span:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeInOut {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 @keyframes thinking {
   0%, 60%, 100% {
