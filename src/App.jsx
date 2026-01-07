@@ -10,12 +10,14 @@ import TechStack from './components/TechStack'
 import Experience from './components/Experience'
 import Personal from './components/Personal'
 import BookAppointment from './components/BookAppointment'
+import Chat from './components/Chat'
 import useTheme from './components/useTheme'
 import asifImage from './assets/images/asif.png'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('main');
   const [isLoading, setIsLoading] = useState(true);
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -59,6 +61,23 @@ function App() {
       <div >
         <PersonalNavbar onBackToMain={handleBackToMain} />
         <Personal onBackToMain={handleBackToMain} />
+        {/* Chat Icon */}
+        <div className="chat-icon">
+          <button
+            onClick={() => setIsChatOpen(true)}
+            className="chat-button"
+          >
+            💬
+          </button>
+        </div>
+        {/* Chat Modal */}
+        {isChatOpen && (
+          <div className="chat-modal-overlay">
+            <div className="chat-modal">
+              <Chat onClose={() => setIsChatOpen(false)} />
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -76,6 +95,23 @@ function App() {
       <div className="pagination">
         <button onClick={handleNavigateToPersonal} className="pagination-button">Next: Personal Page →</button>
       </div>
+      {/* Chat Icon */}
+      <div className="chat-icon">
+        <button
+          onClick={() => setIsChatOpen(true)}
+          className="chat-button"
+        >
+          💬
+        </button>
+      </div>
+      {/* Chat Modal */}
+      {isChatOpen && (
+        <div className="chat-modal-overlay">
+          <div className="chat-modal">
+            <Chat onClose={() => setIsChatOpen(false)} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

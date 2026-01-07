@@ -1,8 +1,7 @@
-# TODO: Reduce Space Between Sections in Personal.jsx
+# TODO
 
-## Tasks
-- [x] Edit `src/styles/Personal.css` to reduce vertical padding in `.personal-section` from 4rem to 0.25rem
-- [x] Adjust responsive padding in media queries: 768px to 0.25rem, 480px to 0.25rem
-- [x] Reduce padding inside travel and book cards from 2rem to 1rem
-- [x] Verify changes by running the application and checking spacing
-np
+- [x] Add CSS styles for chat icon to match project color scheme
+- [x] Ensure chat icon is always visible on screen regardless of scroll
+- [x] Implement theme-aware colors (purple gradient for light, green for dark)
+- [x] Add hover effects and transitions for better UX
+- [x] Style the chat modal overlay and content
