@@ -18,7 +18,6 @@ function App() {
   const [currentPage, setCurrentPage] = useState('main');
   const [isLoading, setIsLoading] = useState(true);
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const [tooltipVisible, setTooltipVisible] = useState(true);
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -36,14 +35,7 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
-    if (!isChatOpen) {
-      const interval = setInterval(() => {
-        setTooltipVisible(prev => !prev);
-      }, 2000);
-      return () => clearInterval(interval);
-    }
-  }, [isChatOpen]);
+
 
   const handleNavigateToPersonal = () => {
     setCurrentPage('personal');
@@ -73,7 +65,6 @@ function App() {
         <Personal onBackToMain={handleBackToMain} />
         {/* Chat Icon */}
         <div className="chat-icon">
-          {!isChatOpen && <div className={`chat-tooltip ${tooltipVisible ? 'visible' : 'hidden'}`}>Hi I am Asif's AI assistant 👋</div>}
           <button
             onClick={() => setIsChatOpen(true)}
             className="chat-button"
@@ -108,7 +99,6 @@ function App() {
       </div>
         {/* Chat Icon */}
         <div className="chat-icon">
-          {!isChatOpen && <div className={`chat-tooltip ${tooltipVisible ? 'visible' : 'hidden'}`}>Hi I am Asif's AI assistant 👋</div>}
           <button
             onClick={() => setIsChatOpen(true)}
             className="chat-button"
