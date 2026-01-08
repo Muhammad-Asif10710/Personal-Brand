@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { sendMessage } from "../api/chat";
 
 interface ChatProps {
@@ -9,6 +9,11 @@ export default function Chat({ onClose }: ChatProps) {
   const [messages, setMessages] = useState<{ role: string; content: string }[]>([{ role: "assistant", content: "Ask me anything, cutie?" }]);
   const [input, setInput] = useState("");
   const [isThinking, setIsThinking] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, isThinking]);
 
   const handleSend = async () => {
     if (!input || isThinking) return;
@@ -49,6 +54,7 @@ export default function Chat({ onClose }: ChatProps) {
             <div className="thinking-text">AI is thinking...</div>
           </div>
         )}
+        <div ref={messagesEndRef} />
       </div>
       <div className="chat-input-container">
         <button onClick={onClose} className="chat-close-button">
