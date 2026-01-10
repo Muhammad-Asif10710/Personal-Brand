@@ -89,6 +89,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: shine 2s ease-in-out infinite;
 }
 
 .chat-button:hover {
@@ -99,6 +100,7 @@ body {
 
 .dark .chat-button {
   background: linear-gradient(135deg, #10b981, #34d399);
+  animation: shine-dark 2s ease-in-out infinite;
 }
 
 .dark .chat-button:hover {
@@ -242,6 +244,30 @@ body {
   30% {
     opacity: 1;
     transform: translateY(-5px);
+  }
+}
+
+@keyframes shine {
+  0% {
+    box-shadow: 0 0 5px rgba(79, 70, 229, 0.5), 0 0 10px rgba(79, 70, 229, 0.3), 0 0 15px rgba(79, 70, 229, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.8), 0 0 20px rgba(79, 70, 229, 0.5), 0 0 30px rgba(79, 70, 229, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(79, 70, 229, 0.5), 0 0 10px rgba(79, 70, 229, 0.3), 0 0 15px rgba(79, 70, 229, 0.2);
+  }
+}
+
+@keyframes shine-dark {
+  0% {
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.5), 0 0 10px rgba(16, 185, 129, 0.3), 0 0 15px rgba(16, 185, 129, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.8), 0 0 20px rgba(16, 185, 129, 0.5), 0 0 30px rgba(16, 185, 129, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.5), 0 0 10px rgba(16, 185, 129, 0.3), 0 0 15px rgba(16, 185, 129, 0.2);
   }
 }
 

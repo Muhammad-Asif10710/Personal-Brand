@@ -65,10 +65,14 @@
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s ease;
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.5), 0 0 10px rgba(79, 70, 229, 0.3), 0 0 15px rgba(79, 70, 229, 0.2);
+  animation: shine 2s ease-in-out infinite;
 }
 
 .hero.dark .social-circle {
   background-color: #10b981;
+  box-shadow: 0 0 5px rgba(16, 185, 129, 0.5), 0 0 10px rgba(16, 185, 129, 0.3), 0 0 15px rgba(16, 185, 129, 0.2);
+  animation: shine-dark 2s ease-in-out infinite;
 }
 
 .social-circle:hover {
