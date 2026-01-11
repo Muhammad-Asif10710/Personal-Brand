@@ -1,7 +1,5 @@
-# TODO
+# TODO: Replace Hero Section Image with New Profile Image Element
 
-- [x] Add CSS styles for chat icon to match project color scheme
-- [x] Ensure chat icon is always visible on screen regardless of scroll
-- [x] Implement theme-aware colors (purple gradient for light, green for dark)
-- [x] Add hover effects and transitions for better UX
-- [x] Style the chat modal overlay and content
+## Tasks
+- [x] Update Hero.jsx: Remove unnecessary imports (asif1Image), state variables (showShirtless, imageLoaded), useEffect for preloading, and handleImageToggle function. Replace the image-container div with the new left-sidebar div containing the img element. Remove the imageLoaded condition around hero-socials.
+- [x] Update Hero.css: Add CSS styles for .left-sidebar > img.me as specified.
